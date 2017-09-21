@@ -1,0 +1,52 @@
+#!/bin/bash
+
+NAME="lorawan-server"
+ENABLED="yes"
+
+[ -f /etc/default/$NAME ] && source /etc/default/$NAME
+
+run_dir=/var/run/lora
+server_pidfile=$run_dir/lorawan-server-1.pid
+
+do_start() {
+    echo -n "Starting $NAME: "
+
+    mkdir -p $run_dir
+    /usr/sbin/start-stop-daemon --background --start --chuid lorawan \
+        --make-pidfile --pidfile $server_pidfile --startas /bin/bash -- \
+        -c "LORAWAN_HOME=/var/lib/lorawan-server /usr/lib/lorawan-server/bin/lorawan-server"
+
+    echo "OK"
+}
+
+do_stop() {
+    echo -n "Stopping $NAME: "
+    su -c "/usr/lib/lorawan-server/bin/lorawanctl stop" lorawan
+    rm -f $server_pidfile
+    echo "OK"
+}
+
+if [ "$ENABLED" != "yes" ]; then
+    echo "$NAME: disabled in /etc/default"
+    exit
+fi
+
+case "$1" in
+    "start")
+    do_start
+        ;;
+    "stop")
+    do_stop
+        ;;
+    "restart")
+        ## Stop the service and regardless of whether it was
+        ## running or not, start it again.
+        do_stop
+        do_start
+        ;;
+    *)
+        ## If no parameters are given, print which are avaiable.
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+    ;;
+esac
