@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 SRC_URI = "git://github.com/gotthardp/lorawan-server.git;branch=master \
    file://lorawan-server.init \
    file://lorawan-server.default"
-SRCREV = "cf7a87b873fb743f0cf9d98a6dc2e4c407b03a3c"
+SRCREV = "0f851225a15ffd2a723d3701f6f3291f9864173b"
 
 SRC_URI[md5sum] = "4a131ae96e5554bcd76025d86e10e5ad"
 SRC_URI[sha256sum] = "6bcf5141db8603758618048cc68979f9a2d44ed9fb923ce5450b390838a7dc7f"

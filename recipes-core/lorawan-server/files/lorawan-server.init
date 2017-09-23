@@ -12,9 +12,10 @@ do_start() {
     echo -n "Starting $NAME: "
 
     mkdir -p $run_dir
+    mkdir -p /var/log/lorawan-server && chown lorawan:lorawan /var/log/lorawan-server
     /usr/sbin/start-stop-daemon --background --start --chuid lorawan \
         --make-pidfile --pidfile $server_pidfile --startas /bin/bash -- \
-        -c "LORAWAN_HOME=/var/lib/lorawan-server /usr/lib/lorawan-server/bin/lorawan-server"
+        -c "LORAWAN_HOME=/var/lib/lorawan-server LORAWAN_LOG_ROOT=/var/log/lorawan-server /usr/lib/lorawan-server/bin/lorawan-server"
 
     echo "OK"
 }
