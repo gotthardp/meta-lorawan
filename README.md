@@ -1,5 +1,5 @@
-OpenEmbedded/Yocto Project layer for LoRaWAN support
-====================================================
+OpenEmbedded/Yocto Project layer with LoRaWAN tools
+===================================================
 
 This layer depends on:
  * [Erlang](https://github.com/joaohf/meta-erlang)
