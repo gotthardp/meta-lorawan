@@ -7,17 +7,12 @@ DEPENDS = "erlang"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-##SRC_URI = "https://github.com/gotthardp/lorawan-server/archive/v${PV}.tar.gz
 SRC_URI = "git://github.com/gotthardp/lorawan-server.git;branch=master \
    file://lorawan-server.init \
    file://lorawan-server.default"
-SRCREV = "0f851225a15ffd2a723d3701f6f3291f9864173b"
-
-SRC_URI[md5sum] = "4a131ae96e5554bcd76025d86e10e5ad"
-SRC_URI[sha256sum] = "6bcf5141db8603758618048cc68979f9a2d44ed9fb923ce5450b390838a7dc7f"
+SRCREV = "958f36306d183cbe9c56ee2af8b783f09e1efbc6"
 
 S = "${WORKDIR}/git"
-##S = "${WORKDIR}/${PN}-${PV}"
 
 RDEPENDS_${PN} += "bash erlang erlang-compiler erlang-syntax-tools erlang-crypto \
     erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon"
