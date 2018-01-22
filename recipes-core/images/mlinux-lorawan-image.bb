@@ -1,5 +1,5 @@
 require recipes-core/images/mlinux-base-image.bb
-DESCRIPTION = "mLinux LoRaWAN image"
+DESCRIPTION = "mLinux LoRaWAN server image"
 
 # handy tools
 IMAGE_INSTALL += "mc"
