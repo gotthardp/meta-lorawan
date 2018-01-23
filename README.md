@@ -19,10 +19,12 @@ To build the image:
    [mLinux](http://www.multitech.net/developer/software/mlinux/mlinux-building-images/building-a-custom-linux-image/),
    [LORIX One](https://github.com/Wifx/meta-wifx),
    or plain OpenEmbedded/Yocto sources
- - Add meta-lorawan to the `conf/bblayers.conf`
+ - Add [meta-erlang](https://github.com/joaohf/meta-erlang)
+   and meta-lorawan to the `conf/bblayers.conf`
    ```bash
    BBLAYERS ?= " \
        ...
+       path_to_source/sources/meta-erlang \
        path_to_source/sources/meta-lorawan \
        "
    ```
