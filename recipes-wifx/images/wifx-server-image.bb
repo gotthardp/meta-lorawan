@@ -3,7 +3,7 @@ DESCRIPTION = "Image with LORIX One support and lorawan-server"
 LICENSE = "MIT"
 PR = "r0"
 
-require wifx-base.bb
+require recipes-core/images/core-image-base.bb
 
 IMAGE_INSTALL += "lorawan-server"
 
