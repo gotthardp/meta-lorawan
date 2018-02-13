@@ -15,7 +15,8 @@ SRCREV = "3f906e3f1bd36c942e897a86e32606a83bfde679"
 S = "${WORKDIR}/git"
 
 RDEPENDS_${PN} += "bash erlang erlang-compiler erlang-syntax-tools erlang-crypto \
-    erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon"
+    erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon \
+    erlang-xmerl"
 
 inherit useradd update-rc.d
 
