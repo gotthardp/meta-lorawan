@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 SRC_URI = "git://github.com/gotthardp/lorawan-server.git;branch=master \
    file://lorawan-server.init \
    file://lorawan-server.default"
-SRCREV = "12bc60f05f96164a846e6da4c2b4bfda1085c762"
+SRCREV = "601a4663974386a2b48e7a220fb8346a20d57022"
 
 S = "${WORKDIR}/git"
 
