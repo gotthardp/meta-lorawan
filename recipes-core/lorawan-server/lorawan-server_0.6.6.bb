@@ -7,6 +7,8 @@ DEPENDS = "erlang"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
+inherit useradd update-rc.d erlang npm
+
 SRC_URI = "git://github.com/gotthardp/lorawan-server.git;branch=master \
    file://lorawan-server.init \
    file://lorawan-server.default"
@@ -17,8 +19,6 @@ S = "${WORKDIR}/git"
 RDEPENDS_${PN} += "bash erlang erlang-compiler erlang-syntax-tools erlang-crypto \
     erlang-inets erlang-asn1 erlang-public-key erlang-ssl erlang-mnesia erlang-os-mon \
     erlang-xmerl"
-
-inherit useradd update-rc.d
 
 USERADD_PACKAGES = "${PN}"
 USERADD_PARAM_${PN} = "--home-dir /var/lib/lorawan-server --create-home lorawan"
