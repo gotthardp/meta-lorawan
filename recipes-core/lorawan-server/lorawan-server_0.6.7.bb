@@ -12,7 +12,7 @@ inherit useradd update-rc.d erlang npm
 SRC_URI = "git://github.com/gotthardp/lorawan-server.git;branch=master \
    file://lorawan-server.init \
    file://lorawan-server.default"
-SRCREV = "51ac4482723f27c51211ee35d4d12d7fe91090f6"
+SRCREV = "b149b6643c27e212df00bc3a4639ce82e2e0672c"
 
 S = "${WORKDIR}/git"
 
