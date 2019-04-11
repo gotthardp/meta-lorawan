@@ -2,12 +2,12 @@ DESCRIPTION = "Compact server for private LoRa networks"
 HOMEPAGE = "https://gotthardp.github.io/lorawan-server/"
 SECTION = "console/utils"
 # https://github.com/joaohf/meta-erlang
-DEPENDS = "erlang"
+DEPENDS = "erlang nodejs-native"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-inherit useradd update-rc.d erlang npm
+inherit useradd update-rc.d erlang
 
 SRC_URI = "git://github.com/gotthardp/lorawan-server.git;branch=master \
    file://lorawan-server.init \
@@ -40,4 +40,5 @@ do_install() {
     install -m 0755 ${WORKDIR}/lorawan-server.init ${D}${sysconfdir}/init.d/lorawan-server
 }
 
-CONFFILES_${PN} = "${sysconfdir}/default/lorawan-server ${libdir}/lorawan-server/releases/${PV}/sys.config"
+FILES_${PN} += "${sysconfdir}/init.d/lorawan-server ${sysconfdir}/default/lorawan-server"
+CONFFILES_${PN} += "${sysconfdir}/default/lorawan-server ${libdir}/lorawan-server/releases/${PV}/sys.config"
